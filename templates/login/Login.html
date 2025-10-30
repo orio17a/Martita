@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <link rel="stylesheet" href="{% static 'css/iniciar_sesion.css' %}">
+</head>
+<body>
+
+    <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    
+    <form method="POST">
+        <div class="input-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" required>
+        </div>
+        <div class="input-group">
+            <label for="nombre">Contraseña:</label> 
+            <input type="password" id="contraseña" required></div>
+        <button type="submit">Entrar</button>
+
+        <div class="forgot-password">
+            <a href="{% url 'restablecer' %}">¿Olvidaste tu contraseña?</a> 
+            <a href="{% url 'register' %}">Registrarme</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<header class="header">
+    <div class="logo">
+        <h1>Peluqueria Martita</h1>
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+
+
+            {% if user.is_authenticated %}  <!-- si el usuario esta autenticado-->
+                <li><a href="/user">{{ user.get_full_name }}</a></li>  <!-- muestra el nombre del usuario autenticado-->
+                <li><a href="{% url 'logout' %}">Salir</a></li>
+                
+            {% else %}
+            <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+            <li><a href="{% url 'register' %}">Registrarme</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+</header>
